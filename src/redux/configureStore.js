@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import missionReducer from './mission/mission';
+import missionSlice from './mission/mission';
 
 const rootReducer = combineReducers({
- missionReducer
+  mission: missionSlice,
 });
 
 const store = configureStore({

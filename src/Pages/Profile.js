@@ -1,3 +1,7 @@
-const Profile = () => <h1>Profile</h1>;
+const Profile = () => (
+  <div>
+    <h1>Profile</h1>
+  </div>
+);
 
 export default Profile;

@@ -1,91 +1,33 @@
-const FETCH_MISSIONS = './mission/FETCH_MISSIONS';
-const FETCH_MISSIONS_SUCCESS = 'mission/FETCH_MISSIONS_SUCCESS';
-const MISSIONS_JOINED = 'mission/missionSlice/MISSIONS_JOINED';
-const MISSIONS_LEFT = 'mission/MISSIONS_LEFT'
+import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
   missions: [],
-  status: 'fetching',
-  loading: false,
-
+  reserve: null,
 };
 
-const url = 'https://api.spacexdata.com/v3/missions';
-const missionReducer = (state =initialState, action) => {
-  switch(action.type) {
-    case FETCH_MISSIONS: {
-      return state;
-    }
-    case FETCH_MISSIONS_SUCCESS:
-      populateMissions(action.myMissions);
-      return { ...state, loading: false, missions: populateMissions(action.data) };
+const missionSlice = createSlice({
+  initialState,
+  name: 'mission',
+  reducers: {
+    fetchMissions: (state, action) => {
+      /* eslint-disable no-param-reassign */
+      const value = action.payload.map((valObj) => ({ ...valObj, reserve: false }));
+      state.missions = value;
+    },
+    joinMission: (state, action) => {
+      /* eslint-disable no-param-reassign */
+      const item = state.missions.filter((m) => m.mission_id === action.payload)[0];
+      item.reserve = !item.reserve;
+    },
+  },
+});
 
-      case MISSIONS_JOINED:
-      return { ...state, missions: JoinedMissions(state.missions, action.payload) };
+export const { fetchMissions, joinMission } = missionSlice.actions;
 
-    case MISSIONS_LEFT:
-      return { ...state, missions: missionsLeft(state.missions, action.payload) };
+export default missionSlice.reducer;
 
-      default :
-      return state
-  }
-
+export const fetchMission = async (url, dispatch) => {
+  const res = await fetch(url);
+  const data = await res.json();
+  dispatch(fetchMissions(data));
 };
-
-export default missionReducer;
-
-export const JoinedMissions = (state, id) => {
-  const newState = state.map((mission) => {
-    if (mission.id !== id) {
-      return mission;
-    }
-    return { ...mission, reserved: true };
-  });
-  return newState;
-};
-
-export const missionsLeft = (state, id) => {
-  const newState = state.map((mission) => {
-    if (mission.id !== id) {
-      return mission;
-    }
-    return { ...mission, reserved: false };
-  });
-  return newState;
-};
-
-export const getMissions = () => async (dispatch) => {
-  dispatch({type: FETCH_MISSIONS})
-  const response = await fetch(url);
-  const data = await response.json();
-
- return dispatch({
-    type: FETCH_MISSIONS_SUCCESS,
-    data,
-  });
-};
-
-export const joinMission = (payload) => (
-  {
-    type: MISSIONS_JOINED,
-    payload,
-  }
-)
-export const leaveMission = (payload) => (
-  {
-    type: MISSIONS_LEFT,
-    payload,
-  }
-)
-
- const populateMissions = (data) => {
-  const missionArray = [];
-  for (let i = 0; i < myMissions.length; i += 1) {
-    missionArray.push({
-      id: data[i].mission_id,
-      name:data[i].mission_name,
-      description: data[i].description,
-      reserved: false,
-    });
-  }
-  return missionArray;
- }
