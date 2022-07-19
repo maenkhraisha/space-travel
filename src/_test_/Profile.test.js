@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import Profile from '../Pages/Profile'
+import Profile from '../Pages/Profile';
 import store from '../redux/configureStore';
 
 it('renders correctly', () => {
@@ -10,7 +10,7 @@ it('renders correctly', () => {
     .create(
       <Provider store={store}>
         <Profile />
-      </Provider>
+      </Provider>,
     ).toJSON();
   expect(tree).toMatchSnapshot();
 });

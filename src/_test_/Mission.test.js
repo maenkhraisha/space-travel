@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import Mission from '../Pages/Mission'
+import Mission from '../Pages/Mission';
 import store from '../redux/configureStore';
 
 it('renders correctly', () => {
@@ -10,7 +10,7 @@ it('renders correctly', () => {
     .create(
       <Provider store={store}>
         <Mission />
-      </Provider>
+      </Provider>,
     ).toJSON();
   expect(tree).toMatchSnapshot();
 });
