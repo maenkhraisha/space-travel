@@ -7,7 +7,7 @@ import MissionList from '../Components/missionList';
 const url = 'https://api.spacexdata.com/v3/missions';
 const Mission = () => {
   const dispatch = useDispatch();
-  const { missions: mA } = useSelector((state) => state.mission);
+  const { missions: missionArray } = useSelector((state) => state.mission);
 
   useEffect(() => {
     fetchMission(url, dispatch);
@@ -25,7 +25,7 @@ const Mission = () => {
           </tr>
         </thead>
         <tbody>
-          {mA.map((mission) => (
+          {missionArray.map((mission) => (
             <MissionList key={mission.mission_id} mission={mission} />
           ))}
         </tbody>
