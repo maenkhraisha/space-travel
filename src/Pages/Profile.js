@@ -1,7 +1,10 @@
+import MissionProfile from '../Components/missionProfile';
+
 const Profile = () => (
   <div>
-    <h1>Profile</h1>
+    <MissionProfile />
   </div>
+
 );
 
 export default Profile;
