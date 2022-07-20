@@ -8,7 +8,7 @@ const initialState = {
   rockets: [],
   reserve: null,
 };
-const reducer = (state = initialState, action) => {
+const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return { rockets: action.payload, reserve: false };
@@ -18,4 +18,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default rocketsReducer;
