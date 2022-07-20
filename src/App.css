@@ -1,7 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .link {
   text-decoration: none;
+  color: inherit;
 }
 
 .link:focus {
   text-decoration: underline;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

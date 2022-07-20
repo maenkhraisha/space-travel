@@ -1,3 +1,10 @@
-const Profile = () => <h1>Profile</h1>;
+import MissionProfile from '../Components/missionProfile';
+
+const Profile = () => (
+  <div>
+    <MissionProfile />
+  </div>
+
+);
 
 export default Profile;

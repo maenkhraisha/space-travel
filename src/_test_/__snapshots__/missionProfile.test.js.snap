@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="reserve-container-top"
+>
+  <h1>
+    My Missions
+  </h1>
+  <div
+    className="container"
+  >
+    <p>
+      No Reserved Missions
+    </p>
+  </div>
+</div>
+`;
