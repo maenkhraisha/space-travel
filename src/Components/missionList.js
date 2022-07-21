@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { joinMission } from '../Redux/mission/mission';
+import { joinMission } from '../Redux/mission/mission.js';
 
 const MissionList = ({ mission }) => {
   const dispatch = useDispatch();
