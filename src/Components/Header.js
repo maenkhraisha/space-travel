@@ -8,7 +8,6 @@ const Header = () => {
   const activeStyle = {
     textDecoration: 'underline',
   };
-  // const activeClassName = 'underline';
   return (
     <nav className="container d-flex align-items-center justify-content-between border-bottom p-2 my-2">
       <div className="container d-flex align-items-center">
