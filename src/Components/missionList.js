@@ -3,12 +3,15 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 /* eslint-disable import/extensions */
-import { joinMission } from '../Redux/mission/mission';
+import { joinMission, leaveMission } from '../Redux/mission/mission';
 
 const MissionList = ({ mission }) => {
   const dispatch = useDispatch();
   const handleClick = (id) => {
     dispatch(joinMission(id));
+  };
+  const handleCancel = (id) => {
+    dispatch(leaveMission(id));
   };
 
   return (
@@ -24,9 +27,19 @@ const MissionList = ({ mission }) => {
         <p style={{ background: mission.reserve ? 'blue' : 'gray', color: mission.reserve ? 'white' : 'white' }} className="active">{mission.reserve ? 'Active Member' : 'NOT A MEMBER'}</p>
       </td>
       <td className="tableBtn">
-        <button style={{ border: mission.reserve && 'red 1px solid', color: mission.reserve && 'red' }} className="Btn" onClick={() => handleClick(mission.mission_id)} type="button">
-          {mission.reserve ? 'Leave mission' : 'Join Mission'}
-        </button>
+        {
+        mission.reserve
+          ? (
+            <button style={{ border: 'red 1px solid', color: 'red' }} className="Btn" onClick={() => handleCancel(mission.mission_id)} type="button">
+              Leave mission
+            </button>
+          )
+          : (
+            <button className="Btn" onClick={() => handleClick(mission.mission_id)} type="button">
+              Join Mission
+            </button>
+          )
+        }
       </td>
     </tr>
   );

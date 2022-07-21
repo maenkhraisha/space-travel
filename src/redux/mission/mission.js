@@ -11,18 +11,33 @@ const missionSlice = createSlice({
   reducers: {
     fetchMissions: (state, action) => {
       /* eslint-disable no-param-reassign */
-      const value = action.payload.map((valObj) => ({ ...valObj, reserve: false }));
+      const reservedMissionIds = state.missions
+        ?.filter((mission) => mission.reserve)
+        .map((mission) => mission.mission_id);
+      const value = action.payload.map((valObj) => ({
+        ...valObj,
+        reserve: reservedMissionIds.includes(valObj.mission_id),
+      }));
       state.missions = value;
     },
     joinMission: (state, action) => {
       /* eslint-disable no-param-reassign */
-      const item = state.missions.filter((m) => m.mission_id === action.payload)[0];
+      const item = state.missions.filter(
+        (m) => m.mission_id === action.payload,
+      )[0];
+      item.reserve = !item.reserve;
+    },
+    leaveMission: (state, action) => {
+      /* eslint-disable no-param-reassign */
+      const item = state.missions.filter(
+        (m) => m.mission_id === action.payload,
+      )[0];
       item.reserve = !item.reserve;
     },
   },
 });
 
-export const { fetchMissions, joinMission } = missionSlice.actions;
+export const { fetchMissions, joinMission, leaveMission } = missionSlice.actions;
 
 export default missionSlice.reducer;
 

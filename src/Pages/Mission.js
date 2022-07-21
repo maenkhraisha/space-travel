@@ -5,8 +5,8 @@ import { fetchMission } from '../Redux/mission/mission';
 import './mission.css';
 import MissionList from '../Components/missionList';
 
-const url = 'https://api.spacexdata.com/v3/missions';
 const Mission = () => {
+  const url = 'https://api.spacexdata.com/v3/missions';
   const dispatch = useDispatch();
   const { missions: missionArray } = useSelector((state) => state.mission);
 
