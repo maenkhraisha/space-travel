@@ -1,3 +1,5 @@
+import { Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../Redux/Rocket/rokect-reducer';
@@ -12,7 +14,7 @@ const Rocket = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {rockets.map((rock) => (
         <RocketItem
           key={rock.id}
@@ -23,7 +25,7 @@ const Rocket = () => {
           reserve={rock.reserve}
         />
       ))}
-    </div>
+    </Container>
   );
 };
 
