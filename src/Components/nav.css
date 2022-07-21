@@ -1,6 +1,7 @@
-.navlink{
-text-decoration: none;
+.navlink {
+  text-decoration: none;
 }
-.navlink:focus{
-text-decoration: underline;
+
+.navlink:focus {
+  text-decoration: underline;
 }
