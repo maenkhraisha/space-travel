@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+/* eslint-disable import/extensions */
 import { joinMission } from '../Redux/mission/mission';
 
 const MissionList = ({ mission }) => {
