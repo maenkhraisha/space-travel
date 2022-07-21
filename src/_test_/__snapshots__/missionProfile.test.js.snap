@@ -4,15 +4,15 @@ exports[`renders correctly 1`] = `
 <div
   className="reserve-container-top"
 >
-  <h1>
+  <h3>
     My Missions
-  </h1>
-  <div
-    className="container"
+  </h3>
+  <table
+    className="table table-bordered"
   >
     <p>
       No Reserved Missions
     </p>
-  </div>
+  </table>
 </div>
 `;

@@ -1,20 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  className="d-flex justify-content-around m-4 container"
+>
   <div
     className="reserve-container-top"
   >
-    <h1>
+    <h3>
       My Missions
-    </h1>
-    <div
-      className="container"
+    </h3>
+    <table
+      className="table table-bordered"
     >
       <p>
         No Reserved Missions
       </p>
-    </div>
+    </table>
+  </div>
+  <div
+    className="reserve-container-top"
+  >
+    <h3>
+      My Rockets
+    </h3>
+    <table
+      className="table table-bordered"
+    >
+      <p>
+        No Reserved Missions
+      </p>
+    </table>
   </div>
 </div>
 `;
