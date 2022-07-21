@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import NavLink from './Components/Navbar';
+import Header from './Components/Header';
 
 import Rocket from './Pages/Rocket';
 import Mission from './Pages/Mission';
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavLink />
+        <Header />
         <Routes>
           <Route path="singleMission/:id" element={<SingleMission />} />
           <Route path="rockets" element={<Rocket />} />
