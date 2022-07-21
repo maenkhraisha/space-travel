@@ -7,15 +7,15 @@ const RocketProfile = () => {
   return (
     <div className="reserve-container-top">
       <h3>My Rockets</h3>
+      {rocketFiltered.length === 0 && <p>No Reserved Missions</p>}
       <table className="table table-bordered">
-        {rocketFiltered.length === 0 && <p>No Reserved Missions</p>}
-        {rocketFiltered.map((rocket) => (
-          <tr key={rocket.id}>
-            <th>
-              <p>{rocket.name}</p>
-            </th>
-          </tr>
-        ))}
+        <thead>
+          {rocketFiltered.map((rocket) => (
+            <tr key={rocket.id}>
+              <th className="p-2">{rocket.name}</th>
+            </tr>
+          ))}
+        </thead>
       </table>
     </div>
   );

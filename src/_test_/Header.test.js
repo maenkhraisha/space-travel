@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MemoryRouter as Router } from 'react-router-dom';
-import NavLink from '../Components/Navbar';
+import Header from '../Components/Header';
 
 it('renders correctly', () => {
   const tree = renderer
     .create(
       <Router>
-        <NavLink />
+        <Header />
       </Router>,
     ).toJSON();
   expect(tree).toMatchSnapshot();
