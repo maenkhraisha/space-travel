@@ -1,3 +1,6 @@
+import { Button, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
@@ -12,33 +15,39 @@ const RocketItem = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <div key={id}>
+    <Container className="d-flex my-3" key={id}>
       <img style={{ width: '20%' }} src={flickrImages} alt="rocket dispaly" />
-      <p>{rocketName}</p>
-      {reserve && <p style={{ backgroundColor: 'green', display: 'inline' }}>Reserved</p>}
-      <p style={{ display: 'inline' }}>
-        {description}
-      </p>
-      {reserve ? (
-        <button
-          value={id}
-          style={{ backgroundColor: 'white' }}
-          onClick={() => dispatch(cancelRocket(id))}
-          type="button"
-        >
-          Cancel Reservation
-        </button>
-      ) : (
-        <button
-          value={id}
-          style={{ backgroundColor: 'lightblue' }}
-          onClick={() => dispatch(reserveRocket(id))}
-          type="button"
-        >
-          Reserve Rocket
-        </button>
-      )}
-    </div>
+      <Container>
+        <p className="h4">{rocketName}</p>
+        {reserve && (
+          <p className="alert alert-success m-2 p-1" style={{ color: 'white', backgroundColor: 'green', display: 'inline' }}>
+            Reserved
+          </p>
+        )}
+        <p style={{ display: 'inline' }}>{description}</p>
+        {reserve ? (
+          <Button
+            type="button"
+            className="btn btn-outline-secondary"
+            style={{ display: 'block' }}
+            value={id}
+            onClick={() => dispatch(cancelRocket(id))}
+          >
+            Cancel Reservation
+          </Button>
+        ) : (
+          <Button
+            type="button"
+            className="btn btn-primary"
+            style={{ display: 'block' }}
+            value={id}
+            onClick={() => dispatch(reserveRocket(id))}
+          >
+            Reserve Rocket
+          </Button>
+        )}
+      </Container>
+    </Container>
   );
 };
 
