@@ -1,5 +1,5 @@
 # Space Travel Hub
-This is an app that  displays a list of Rockets and Missions , allow users to reserve and cancel a Rocket, join and leave a mission.
+This is an app that  displays a list of Rockets and Missions , allow users to reserve and cancel a Rocket, join and leave a Mission.
 
 ## Built With
 
