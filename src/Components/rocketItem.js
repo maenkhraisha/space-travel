@@ -15,11 +15,14 @@ const RocketItem = ({
     <div key={id}>
       <img style={{ width: '20%' }} src={flickrImages} alt="rocket dispaly" />
       <p>{rocketName}</p>
-      <p>{description}</p>
+      <p>
+        {reserve && <p style={{ backgroundColor: 'green', display: 'inline' }}>Reserved</p>}
+        {description}
+      </p>
       {reserve ? (
         <button
           value={id}
-          style={{ backgroundColor: 'green' }}
+          style={{ backgroundColor: 'white' }}
           onClick={() => dispatch(cancelRocket(id))}
           type="button"
         >
@@ -28,7 +31,7 @@ const RocketItem = ({
       ) : (
         <button
           value={id}
-          style={{ backgroundColor: 'white' }}
+          style={{ backgroundColor: 'lightblue' }}
           onClick={() => dispatch(reserveRocket(id))}
           type="button"
         >
