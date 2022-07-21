@@ -1,0 +1,55 @@
+.body {
+  width: 90vw;
+  height: 90vh;
+  border: 1px solid lightgrey;
+}
+
+.tablehead {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(242, 242, 242);
+  color: white;
+}
+
+.Btn,
+.active {
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.description {
+  width: 50%;
+  border: 1px solid rgb(242, 242, 242);
+  padding: 10px;
+  color: black;
+}
+
+.tableRow {
+  border: 1px solid rgb(242, 242, 242);
+}
+
+.name {
+  color: #000;
+}
+
+.tableBtn,
+.tableActive {
+  width: 200px;
+  border: 1px solid rgb(242, 242, 242);
+}
+
+.tableActive p {
+  margin: 50px;
+}
+
+.tableBtn button {
+  margin: 50px;
+}

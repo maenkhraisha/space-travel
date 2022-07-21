@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container d-flex align-items-center justify-content-between border-bottom p-2 my-2"
+>
+  <div
+    className="container d-flex align-items-center"
+  >
+    <img
+      alt="Logo"
+      className=""
+      src="Photo.png"
+      style={
+        Object {
+          "height": "100px",
+          "marginRight": "10px",
+          "width": "100px",
+        }
+      }
+    />
+    <h1
+      className="text-nowrap"
+    >
+      Space Travel Hub
+    </h1>
+  </div>
+  <div
+    className="text-nowrap p-3"
+  >
+    <a
+      className="p-2 navlink"
+      href="/rockets"
+      onClick={[Function]}
+    >
+      Rockects
+    </a>
+    <a
+      className="p-2 navlink"
+      href="/missions"
+      onClick={[Function]}
+    >
+      Missions
+    </a>
+    <a
+      className="p-2 navlink"
+      href="/profile"
+      onClick={[Function]}
+    >
+      My Profile
+    </a>
+  </div>
+</div>
+`;
