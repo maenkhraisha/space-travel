@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+/* eslint-disable import/extensions */
 import { fetchMission } from '../Redux/mission/mission';
 import './mission.css';
 import MissionList from '../Components/missionList';

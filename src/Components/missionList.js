@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+/* eslint-disable import/extensions */
 import { joinMission } from '../Redux/mission/mission';
 
-const missionList = ({ mission }) => {
+const MissionList = ({ mission }) => {
   const dispatch = useDispatch();
   const handleClick = (id) => {
     dispatch(joinMission(id));
@@ -30,4 +32,14 @@ const missionList = ({ mission }) => {
   );
 };
 
-export default missionList;
+MissionList.propTypes = {
+  mission: PropTypes.shape({
+    mission_name: PropTypes.string.isRequired,
+    mission_id: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    reserve: PropTypes.bool.isRequired,
+
+  }).isRequired,
+};
+
+export default MissionList;
