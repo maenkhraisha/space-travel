@@ -15,8 +15,8 @@ const RocketItem = ({
     <div key={id}>
       <img style={{ width: '20%' }} src={flickrImages} alt="rocket dispaly" />
       <p>{rocketName}</p>
-      <p>
-        {reserve && <p style={{ backgroundColor: 'green', display: 'inline' }}>Reserved</p>}
+      {reserve && <p style={{ backgroundColor: 'green', display: 'inline' }}>Reserved</p>}
+      <p style={{ display: 'inline' }}>
         {description}
       </p>
       {reserve ? (
