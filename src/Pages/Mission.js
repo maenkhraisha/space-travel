@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMission } from '../Redux/mission/mission.js';
+import { fetchMission } from '../Redux/mission/mission';
 import './mission.css';
-import MissionList from '../Components/missionList.js';
+import MissionList from '../Components/missionList';
 
 const url = 'https://api.spacexdata.com/v3/missions';
 const Mission = () => {
