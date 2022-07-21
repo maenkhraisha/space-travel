@@ -1,25 +1,26 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchRocketsMiddleware from '../Redux/Rocket/middleware-API';
+import { fetchRockets } from '../Redux/Rocket/rokect-reducer';
 import RocketItem from '../Components/rocketItem';
 
 const Rocket = () => {
-  const rocketArray = useSelector((state) => state.rockets);
+  const rockets = useSelector((state) => state.rockets);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    fetchRocketsMiddleware(dispatch);
+    if (!rockets.length) dispatch(fetchRockets());
   }, []);
 
   return (
     <div>
-      <h1>this is rocket page</h1>
-      {rocketArray.rockets.map((rock) => (
+      {rockets.map((rock) => (
         <RocketItem
           key={rock.id}
           id={rock.id}
-          flickrImages={rock.flickr_images}
-          rocketName={rock.rocket_name}
+          flickrImages={rock.image}
+          rocketName={rock.name}
           description={rock.description}
+          reserve={rock.reserve}
         />
       ))}
     </div>
