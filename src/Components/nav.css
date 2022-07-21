@@ -1,26 +1,7 @@
-.navbar {
-  width: 100vw;
-  height: 150px;
-  border-bottom: 1px solid rgb(219, 216, 216);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
+.navlink {
+  text-decoration: none;
 }
 
-.nav-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar .nav-links {
-  display: flex;
-  justify-content: space-around;
-  gap: 50px;
-}
-
-.nav-img h1 {
-  font-size: 2rem;
-  font-weight: 800;
+.navlink:focus {
+  text-decoration: underline;
 }

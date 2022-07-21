@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
 
 const RocketProfile = () => {
@@ -5,13 +6,17 @@ const RocketProfile = () => {
   const rocketFiltered = rocketArray.filter((rocket) => rocket.reserve);
   return (
     <div className="reserve-container-top">
-      <h1>My Rockets</h1>
-      <div className="container">
-        { rocketFiltered.length === 0 && <p>No Reserved Missions</p>}
+      <h3>My Rockets</h3>
+      <table className="table table-bordered">
+        {rocketFiltered.length === 0 && <p>No Reserved Missions</p>}
         {rocketFiltered.map((rocket) => (
-          <h3 key={rocket.id} className="reserve-item">{rocket.name}</h3>
+          <tr key={rocket.id}>
+            <th>
+              <p>{rocket.name}</p>
+            </th>
+          </tr>
         ))}
-      </div>
+      </table>
     </div>
   );
 };
