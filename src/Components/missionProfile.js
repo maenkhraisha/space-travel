@@ -6,13 +6,17 @@ const MissionProfile = () => {
   const missionsFiltered = missionArray.filter((mission) => mission.reserve);
   return (
     <div className="reserve-container-top">
-      <h1>My Missions</h1>
-      <div className="container">
+      <h3>My Missions</h3>
+      <table className="table table-bordered">
         { missionsFiltered.length === 0 && <p>No Reserved Missions</p>}
         {missionsFiltered.map((mission) => (
-          <h3 key={mission.mission_id} className="reserve-item">{mission.mission_name}</h3>
+          <tr key={mission.mission_id}>
+            <th>
+              <p>{mission.mission_name}</p>
+            </th>
+          </tr>
         ))}
-      </div>
+      </table>
     </div>
   );
 };

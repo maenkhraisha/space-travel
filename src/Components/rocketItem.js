@@ -28,7 +28,7 @@ const RocketItem = ({
         {reserve ? (
           <Button
             type="button"
-            className="btn btn-outline-secondary"
+            className="btn btn-secondary mt-2"
             style={{ display: 'block' }}
             value={id}
             onClick={() => dispatch(cancelRocket(id))}
@@ -38,7 +38,7 @@ const RocketItem = ({
         ) : (
           <Button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary mt-2"
             style={{ display: 'block' }}
             value={id}
             onClick={() => dispatch(reserveRocket(id))}
