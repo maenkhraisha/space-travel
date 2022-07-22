@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/maenkhraisha/space-travel.git/static/css/main.5a139002.css",
+    "main.js": "/maenkhraisha/space-travel.git/static/js/main.5794a834.js",
+    "static/js/787.d7d8ac67.chunk.js": "/maenkhraisha/space-travel.git/static/js/787.d7d8ac67.chunk.js",
+    "static/media/Photo.png": "/maenkhraisha/space-travel.git/static/media/Photo.3f6fb2742f28651730c0.png",
+    "index.html": "/maenkhraisha/space-travel.git/index.html",
+    "main.5a139002.css.map": "/maenkhraisha/space-travel.git/static/css/main.5a139002.css.map",
+    "main.5794a834.js.map": "/maenkhraisha/space-travel.git/static/js/main.5794a834.js.map",
+    "787.d7d8ac67.chunk.js.map": "/maenkhraisha/space-travel.git/static/js/787.d7d8ac67.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a139002.css",
+    "static/js/main.5794a834.js"
+  ]
+}
