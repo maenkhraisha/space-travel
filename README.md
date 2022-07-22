@@ -9,6 +9,10 @@ This is an app that  displays a list of Rockets and Missions , allow users to re
 ## Live demo link 
 https://maenkhraisha.github.io/space-travel/
 
+## Screenshot
+
+![portfolio](./src/assets/images/screenshot.png)
+
 ## Getting Started
 
 To get a local copy up and running:
